@@ -2,7 +2,7 @@ import { BaseFileReader } from './BaseFileReader';
 import { Triangle } from '@/entities/Triangle';
 import { TriangleFactory } from '@/factories/TriangleFactory';
 import { FileDataValidator } from '@/validators/FileDataValidator';
-import {Shape} from "@/entities/Shape.ts";
+import { Shape } from "@/entities/Shape.ts";
 
 export class TriangleFileReader extends BaseFileReader<Triangle> {
     constructor() {
