@@ -1,19 +1,32 @@
-export abstract class BaseFileReader<T> {
-    protected abstract createShape(id: string, data: string): T | null;
+import type { Shape } from "@/entities/Shape.ts";
+import type { ShapeFactory } from "@/factories/ShapeFactory.ts";
+import type { FileDataValidator } from "@/validators/FileDataValidator.ts";
+
+export abstract class BaseFileReader<T extends Shape> {
+    protected constructor(
+        protected readonly factory: ShapeFactory,
+        protected readonly validator: FileDataValidator
+    ) {}
 
     async read(filePath: string): Promise<T[]> {
         try {
             const response = await fetch(filePath);
-            if (!response.ok) throw new Error(`Failed to load ${filePath}`);
+            if (!response.ok) throw new Error(`Failed to load file: ${filePath}`);
 
             const text = await response.text();
-            return text
-                .split('\n')
-                .map((line, index) => this.createShape(`shape-${index + 1}`, line.trim()))
-                .filter((shape): shape is T => shape !== null);
+            return this.processLines(text);
         } catch (error) {
-            console.error('FileReader error:', error);
+            console.error(`Error reading file ${filePath}:`, error);
             return [];
         }
     }
+
+    private processLines(fileContent: string): T[] {
+        return fileContent
+            .split('\n')
+            .map((line, index) => this.processLine(line.trim(), index + 1))
+            .filter((shape): shape is T => shape !== null);
+    }
+
+    protected abstract processLine(line: string, lineNumber: number): Shape | null;
 }
