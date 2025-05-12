@@ -1,11 +1,10 @@
 import type { Shape } from "@/entities/Shape.ts";
 import type { ShapeFactory } from "@/factories/ShapeFactory.ts";
-import type { FileDataValidator } from "@/validators/FileDataValidator.ts";
+
 
 export abstract class BaseFileReader<T extends Shape> {
     protected constructor(
         protected readonly factory: ShapeFactory,
-        protected readonly validator: FileDataValidator
     ) {}
 
     async read(filePath: string): Promise<T[]> {
