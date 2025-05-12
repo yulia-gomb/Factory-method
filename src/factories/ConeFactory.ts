@@ -3,12 +3,14 @@ import { Cone } from '@/entities/Cone';
 import { Point } from '@/entities/Point';
 import { ConeValidator } from '@/validators/ConeValidator';
 import { FileDataValidator } from "@/validators/FileDataValidator.ts";
+import logger from '@/logger';
+
 
 export class ConeFactory extends ShapeFactory {
     createFromString(id: string, data: string): Cone | null {
 
         if (!FileDataValidator.isValidConeData(data)) {
-            console.warn(`Invalid cone data format: ${data}`);
+            logger.warn(`Invalid cone data format: ${data}`);
             return null;
         }
 
@@ -25,10 +27,11 @@ export class ConeFactory extends ShapeFactory {
         const validator = new ConeValidator();
 
         if (!validator.validate(cone)) {
-            console.warn(`Invalid cone geometry: ${data}`);
+            logger.warn(`Invalid cone geometry: ${data}`);
             return null;
         }
 
+        logger.info(`Successfully created cone: ${id}`);
         return cone;
     }
 }

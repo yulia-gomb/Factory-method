@@ -3,12 +3,13 @@ import { Triangle } from '@/entities/Triangle';
 import { Point } from '@/entities/Point';
 import { FileDataValidator } from '@/validators/FileDataValidator';
 import { TriangleValidator } from '@/validators/TriangleValidator';
+import logger from '@/logger';
 
 export class TriangleFactory extends ShapeFactory {
     createFromString(id: string, data: string): Triangle | null {
 
         if (!FileDataValidator.isValidTriangleData(data)) {
-            console.warn(`Invalid triangle data format: ${data}`);
+            logger.warn(`Invalid triangle data format: ${data}`);
             return null;
         }
 
@@ -25,10 +26,11 @@ export class TriangleFactory extends ShapeFactory {
         const validator = new TriangleValidator();
 
         if (!validator.validate(triangle)) {
-            console.warn(`Invalid triangle geometry: ${data}`);
+            logger.warn(`Invalid triangle geometry for ID: ${id}`);
             return null;
         }
 
+        logger.info(`Successfully created triangle: ${id}`);
         return triangle;
     }
 }
