@@ -1,53 +1,54 @@
 import { ConeFileReader } from '@/utils/FileReader/ConeFileReader';
 import { TriangleFileReader } from '@/utils/FileReader/TriangleFileReader';
 import {ConeCalculator} from "@/utils/Calculator/ConeCalculator.ts";
-import {TriangleCalculator} from "@/utils/Calculator/TriangleCalculator.ts";
+import { TriangleCalculator } from "@/utils/Calculator/TriangleCalculator.ts";
+import logger from '@/logger';
 
 
 async function main() {
-    console.log('=== Application Started ===\n');
+    logger.info('=== Application Started ===\n');
 
-    // 1. Инициализация
+    // 1. Initialization
     const coneReader = new ConeFileReader();
     const triangleReader = new TriangleFileReader();
     const coneCalculator = new ConeCalculator();
     const triangleCalculator = new TriangleCalculator();
 
-    // 2. Чтение файлов
-    console.log('Reading cones.txt...');
+    // 2. Reading files
+    logger.info('Reading cones.txt...');
     const cones = await coneReader.read('/cones.txt');
 
-    console.log('\nReading triangles.txt...');
+    logger.info('\nReading triangles.txt...');
     const triangles = await triangleReader.read('/triangles.txt');
 
-    // 3. Вывод результатов
-    console.log('\n=== Results ===');
+    // 3. Results
+    logger.info('\n=== Results ===');
 
-    // Конусы
-    console.log('\nCones:');
-    cones.forEach(cone => {
-        console.log(`- ID: ${cone.id}`);
-        console.log(`  Base: (${cone.baseCenter.x},${cone.baseCenter.y},${cone.baseCenter.z})`);
-        console.log(`  Apex: (${cone.apex.x},${cone.apex.y},${cone.apex.z})`);
-        console.log(`  Radius: ${cone.baseRadius}`);
-        console.log(`  Volume: ${coneCalculator.calculateVolume(cone).toFixed(2)}`);
-    });
-
-    // Треугольники
-    console.log('\nTriangles:');
+    // Triangles
+    logger.info('\nTriangles:');
     triangles.forEach(triangle => {
-        console.log(`- ID: ${triangle.id}`);
-        console.log(`  Points: A(${triangle.pointA.x},${triangle.pointA.y},${triangle.pointA.z}) ` +
+        logger.info(`- ID: ${triangle.id}`);
+        logger.info(`  Points: A(${triangle.pointA.x},${triangle.pointA.y},${triangle.pointA.z}) ` +
             `B(${triangle.pointB.x},${triangle.pointB.y},${triangle.pointB.z}) ` +
             `C(${triangle.pointC.x},${triangle.pointC.y},${triangle.pointC.z})`);
-        console.log(`  Area: ${triangleCalculator.calculateArea(triangle).toFixed(2)}`);
+        logger.info(`  Area: ${triangleCalculator.calculateArea(triangle).toFixed(2)}`);
     });
 
-    // Статистика
-    console.log('\n=== Summary ===');
-    console.log(`Valid cones: ${cones.length}`);
-    console.log(`Valid triangles: ${triangles.length}`);
-    console.log('\n=== Application Finished ===');
+    // Cones
+    logger.info('\nCones:');
+    cones.forEach(cone => {
+        logger.info(`- ID: ${cone.id}`);
+        logger.info(`  Base: (${cone.baseCenter.x},${cone.baseCenter.y},${cone.baseCenter.z})`);
+        logger.info(`  Apex: (${cone.apex.x},${cone.apex.y},${cone.apex.z})`);
+        logger.info(`  Radius: ${cone.baseRadius}`);
+        logger.info(`  Volume: ${coneCalculator.calculateVolume(cone).toFixed(2)}`);
+    });
+
+    // Statistics
+    logger.info('\n=== Summary ===');
+    logger.info(`Valid cones: ${cones.length}`);
+    logger.info(`Valid triangles: ${triangles.length}`);
+    logger.info('\n=== Application Finished ===');
 }
 
-main().catch(console.error);
+main().catch(logger.error);
