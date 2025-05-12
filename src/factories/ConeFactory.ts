@@ -1,8 +1,8 @@
 import { ShapeFactory } from './ShapeFactory';
 import { Cone } from '@/entities/Cone';
 import { Point } from '@/entities/Point';
-import { FileDataValidator } from '@/validators/FileDataValidator';
 import { ConeValidator } from '@/validators/ConeValidator';
+import { FileDataValidator } from "@/validators/FileDataValidator.ts";
 
 export class ConeFactory extends ShapeFactory {
     createFromString(id: string, data: string): Cone | null {
