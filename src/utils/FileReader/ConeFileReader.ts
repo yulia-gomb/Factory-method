@@ -1,12 +1,11 @@
 import { BaseFileReader } from './BaseFileReader';
 import { Cone } from '@/entities/Cone';
 import { ConeFactory } from '@/factories/ConeFactory';
-import { FileDataValidator } from '@/validators/FileDataValidator';
-import {Shape} from "@/entities/Shape.ts";
+import { Shape } from "@/entities/Shape.ts";
 
 export class ConeFileReader extends BaseFileReader<Cone> {
     constructor() {
-        super(new ConeFactory(), new FileDataValidator());
+        super(new ConeFactory());
     }
 
     protected processLine(line: string, lineNumber: number): Shape | null {
