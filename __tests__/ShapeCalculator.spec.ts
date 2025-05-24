@@ -1,4 +1,4 @@
-import { MockShapeCalculator } from "./MockShapeCalculator";
+import { MockShapeCalculator } from "../src/utils/Calculator/MockShapeCalculator";
 import { Shape } from "../src/entities/Shape";
 
 

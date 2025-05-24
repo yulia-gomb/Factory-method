@@ -1,5 +1,5 @@
-import { Shape } from "../src/entities/Shape";
-import { ShapeCalculator } from "../src/utils/Calculator/ShapeCalculator";
+import { Shape } from "../../entities/Shape.ts";
+import { ShapeCalculator } from "./ShapeCalculator.ts";
 
 export class MockShapeCalculator extends ShapeCalculator {
     calculateArea(_shape: Shape): number {

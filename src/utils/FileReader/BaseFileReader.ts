@@ -1,6 +1,5 @@
-import type { Shape } from "@/entities/Shape.ts";
-import type { ShapeFactory } from "@/factories/ShapeFactory.ts";
-
+import type { Shape } from "@/entities/Shape";
+import type { ShapeFactory } from "@/factories/ShapeFactory";
 
 export abstract class BaseFileReader<T extends Shape> {
     protected constructor(
