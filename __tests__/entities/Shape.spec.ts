@@ -1,4 +1,4 @@
-import { Shape } from '../src/entities/Shape';
+import { Shape } from '../../src/entities/Shape';
 
 class MockShape extends Shape {}
 

@@ -1,6 +1,6 @@
-import { Point } from '../src/entities/Point';
-import { Shape } from "../src/entities/Shape";
-import { Cone } from "../src/entities/Cone";
+import { Point } from '../../src/entities/Point';
+import { Shape } from "../../src/entities/Shape";
+import { Cone } from "../../src/entities/Cone";
 
 
 describe('Cone', () => {

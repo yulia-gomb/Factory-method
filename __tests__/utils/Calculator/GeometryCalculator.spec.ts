@@ -1,5 +1,5 @@
-import { Point } from "../src/entities/Point";
-import { GeometryCalculator } from "../src/utils/Calculator/GeometryCalculator";
+import { Point } from "../../../src/entities/Point";
+import { GeometryCalculator } from "../../../src/utils/Calculator/GeometryCalculator";
 
 
 describe('GeometryCalculator', () => {

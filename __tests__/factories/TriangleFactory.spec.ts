@@ -1,12 +1,12 @@
-import { TriangleFactory } from '../src/factories/TriangleFactory';
-import { Point } from "../src/entities/Point";
-import { Triangle } from "../src/entities/Triangle";
-import { FileDataValidator } from "../src/validators/FileDataValidator";
-import { TriangleValidator } from "../src/validators/TriangleValidator";
+import { TriangleFactory } from '../../src/factories/TriangleFactory';
+import { Point } from "../../src/entities/Point";
+import { Triangle } from "../../src/entities/Triangle";
+import { FileDataValidator } from "../../src/validators/FileDataValidator";
+import { TriangleValidator } from "../../src/validators/TriangleValidator";
 
 
-jest.mock('@/validators/FileDataValidator');
-jest.mock('@/validators/TriangleValidator');
+jest.mock('../../src/validators/FileDataValidator');
+jest.mock('../../src/validators/TriangleValidator');
 
 describe('TriangleFactory', () => {
     it('should create a triangle for valid data and geometry', () => {

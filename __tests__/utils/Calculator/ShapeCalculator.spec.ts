@@ -1,5 +1,5 @@
-import { MockShapeCalculator } from "../src/utils/Calculator/MockShapeCalculator";
-import { Shape } from "../src/entities/Shape";
+import { MockShapeCalculator } from "../../../src/utils/Calculator/MockShapeCalculator";
+import { Shape } from "../../../src/entities/Shape";
 
 
 class MockShape extends Shape {

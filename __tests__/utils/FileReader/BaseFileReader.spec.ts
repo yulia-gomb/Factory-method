@@ -1,4 +1,4 @@
-import { MockFileReader, MockShapeFactory } from "../src/utils/FileReader/MockFileReader";
+import { MockFileReader, MockShapeFactory } from "../../../src/utils/FileReader/MockFileReader";
 
 
 describe('BaseFileReader', () => {

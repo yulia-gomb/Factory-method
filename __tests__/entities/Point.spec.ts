@@ -1,4 +1,4 @@
-import { Point } from '../src/entities/Point';
+import { Point } from '../../src/entities/Point';
 
 describe('Point', () => {
     it('should create a point with correct coordinates', () => {

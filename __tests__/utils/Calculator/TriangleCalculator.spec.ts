@@ -1,6 +1,6 @@
-import { TriangleCalculator } from "../src/utils/Calculator/TriangleCalculator";
-import { Point } from "../src/entities/Point";
-import { Triangle } from "../src/entities/Triangle";
+import { TriangleCalculator } from "../../../src/utils/Calculator/TriangleCalculator";
+import { Point } from "../../../src/entities/Point";
+import { Triangle } from "../../../src/entities/Triangle";
 
 
 describe('TriangleCalculator', () => {

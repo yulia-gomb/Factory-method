@@ -1,6 +1,6 @@
-import { ConeCalculator } from "../src/utils/Calculator/ConeCalculator";
-import { Cone } from "../src/entities/Cone";
-import { Point } from "../src/entities/Point";
+import { ConeCalculator } from "../../../src/utils/Calculator/ConeCalculator";
+import { Cone } from "../../../src/entities/Cone";
+import { Point } from "../../../src/entities/Point";
 
 
 describe('ConeCalculator', () => {

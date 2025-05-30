@@ -1,5 +1,5 @@
-import { Point } from "../src/entities/Point";
-import { PointValidator } from "../src/validators/PointValidator";
+import { Point } from "../../src/entities/Point";
+import { PointValidator } from "../../src/validators/PointValidator";
 
 
 describe('PointValidator', () => {

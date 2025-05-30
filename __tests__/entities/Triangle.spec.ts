@@ -1,6 +1,6 @@
-import { Triangle } from '../src/entities/Triangle';
-import { Point } from '../src/entities/Point';
-import { Shape } from "../src/entities/Shape";
+import { Triangle } from '../../src/entities/Triangle';
+import { Point } from '../../src/entities/Point';
+import { Shape } from "../../src/entities/Shape";
 
 describe('Triangle', () => {
     it('should create a Triangle with the correct ID and points', () => {

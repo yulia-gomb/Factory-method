@@ -1,4 +1,4 @@
-import { FileDataValidator } from "../src/validators/FileDataValidator";
+import { FileDataValidator } from "../../src/validators/FileDataValidator";
 
 
 describe('FileDataValidator', () => {

@@ -1,12 +1,12 @@
-import {Point} from "../src/entities/Point";
-import {Cone} from "../src/entities/Cone";
-import {PointValidator} from "../src/validators/PointValidator";
-import {GeometryCalculator} from "../src/utils/Calculator/GeometryCalculator";
-import {ConeValidator} from "../src/validators/ConeValidator";
+import {Point} from "../../src/entities/Point";
+import {Cone} from "../../src/entities/Cone";
+import {PointValidator} from "../../src/validators/PointValidator";
+import {GeometryCalculator} from "../../src/utils/Calculator/GeometryCalculator";
+import {ConeValidator} from "../../src/validators/ConeValidator";
 
 
-jest.mock('@/validators/PointValidator');
-jest.mock('@/utils/Calculator/GeometryCalculator');
+jest.mock('../../src/validators/PointValidator');
+jest.mock('../../src/utils/Calculator/GeometryCalculator');
 
 describe('ConeValidator', () => {
     it('should validate a valid cone', () => {

@@ -1,12 +1,12 @@
-import { Point } from "../src/entities/Point";
-import { Triangle } from "../src/entities/Triangle";
-import { PointValidator } from "../src/validators/PointValidator";
-import { GeometryCalculator } from "../src/utils/Calculator/GeometryCalculator";
-import { TriangleValidator } from "../src/validators/TriangleValidator";
+import { Point } from "../../src/entities/Point";
+import { Triangle } from "../../src/entities/Triangle";
+import { PointValidator } from "../../src/validators/PointValidator";
+import { GeometryCalculator } from "../../src/utils/Calculator/GeometryCalculator";
+import { TriangleValidator } from "../../src/validators/TriangleValidator";
 
 
-jest.mock('@/validators/PointValidator');
-jest.mock('@/utils/Calculator/GeometryCalculator');
+jest.mock('../../src/validators/PointValidator');
+jest.mock('../../src/utils/Calculator/GeometryCalculator');
 
 describe('TriangleValidator', () => {
     it('should return true for valid triangle', () => {

@@ -1,5 +1,5 @@
-import { Shape } from "../src/entities/Shape";
-import { ShapeFactory } from "../src/factories/ShapeFactory";
+import { Shape } from "../../src/entities/Shape";
+import { ShapeFactory } from "../../src/factories/ShapeFactory";
 
 
 class MockShape extends Shape {

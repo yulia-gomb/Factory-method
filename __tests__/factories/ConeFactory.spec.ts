@@ -1,12 +1,12 @@
-import { ConeFactory } from '../src/factories/ConeFactory';
-import { Cone } from "../src/entities/Cone";
-import { Point } from "../src/entities/Point";
-import { ConeValidator } from "../src/validators/ConeValidator";
-import { FileDataValidator } from "../src/validators/FileDataValidator";
+import { ConeFactory } from '../../src/factories/ConeFactory';
+import { Cone } from "../../src/entities/Cone";
+import { Point } from "../../src/entities/Point";
+import { ConeValidator } from "../../src/validators/ConeValidator";
+import { FileDataValidator } from "../../src/validators/FileDataValidator";
 
 
-jest.mock('@/validators/FileDataValidator');
-jest.mock('@/validators/ConeValidator');
+jest.mock('../../src/validators/FileDataValidator');
+jest.mock('../../src/validators/ConeValidator');
 
 
 describe('ConeFactory', () => {
